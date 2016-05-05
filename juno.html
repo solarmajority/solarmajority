@@ -30,8 +30,11 @@
         var mailto = "mailto:" + addr + "?body=" + encodeURIComponent(message);
         $(x).attr("href", mailto);
     }
-    function fail() {
-        $("#demo2").text("failed to get location :(");
+    function fail(err) {
+      var msg = "failed to get location :(";
+      $("#demo2").text(msg);
+      msg += "  error message: " + err.message;
+      $("#demo2").text(msg);
     }
      $(x).click(getLocation);
      $(x).text("Share Location with Red");
