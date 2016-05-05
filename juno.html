@@ -24,17 +24,20 @@
     function showPosition(position) {
         var message = (
           "Latitude: " + position.coords.latitude + 
-          ",Longitude: " + position.coords.longitude);
+          ", Longitude: " + position.coords.longitude);
         var addr = "redd" + "aly" + "@gmail.com";
         var mailto = "mailto:" + addr + "?body=" + encodeURIComponent(message);
         $(x).attr("href", mailto);
     }
     getLocation();
-    // $(x).click();
+     $(x).click(getLocation);
     }//]]>
   </script>
 </head>
 <body>
+  <div>
+    <a id="demo">Email location to Red</a>
+  </div>
   <div>
     <a id="demo">Email location to Red</a>
   </div>
