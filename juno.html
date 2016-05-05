@@ -1,0 +1,42 @@
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <script type="text/javascript" src="/js/lib/dummy.js"></script>
+  <style type="text/css"></style>
+  <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <style type="text/css">
+  </style>
+  <title>Quickly email your GPS location</title>
+  <script type="text/javascript">
+    //<![CDATA[
+    window.onload=function(){
+    var x = document.getElementById("demo");
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+    }
+    function showPosition(position) {
+        var message = (
+          "Latitude: " + position.coords.latitude + 
+          ",Longitude: " + position.coords.longitude);
+        var addr = "redd" + "aly" + "@gmail.com";
+        var mailto = "mailto:" + addr + "&body=" + encodeURIComponent(message);
+        $(x).attr("href", mailto);
+    }
+    getLocation();
+    // $(x).click();
+    }//]]>
+  </script>
+</head>
+<body>
+  <div>
+    <a id="demo">Email location to Red</a>
+  </div>
+</body>
+</html>
