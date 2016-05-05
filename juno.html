@@ -16,9 +16,10 @@
     var x = document.getElementById("demo");
     function getLocation() {
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition, fail);
+          var options = { enableHighAccuracy: true, timeout : 10000 };
+          navigator.geolocation.getCurrentPosition(showPosition, fail, options);
         } else {
-            x.innerHTML = "Geolocation is not supported by this browser.";
+          x.innerHTML = "Geolocation is not supported by this browser.";
         }
     }
     function showPosition(position) {
@@ -40,7 +41,7 @@
 </head>
 <body>
   <div>
-    <a id="demo">Share location with Red</a>
+    <a id="demo" href="#">Share location with Red</a>
   </div>
   <div id="demo2">:)</div>
 </body>
