@@ -29,6 +29,7 @@
         var addr = "redd" + "aly" + "@gmail.com";
         var mailto = "mailto:" + addr + "?body=" + encodeURIComponent(message);
         $(x).attr("href", mailto);
+        window.location.assign(mailto);
     }
     function fail(err) {
       var msg = "failed to get location :(";
