@@ -26,6 +26,8 @@
         var message = (
           "Latitude: " + position.coords.latitude + 
           ", Longitude: " + position.coords.longitude);
+        $("#demo2").text("Determined your location. Click above to email location to Red");
+        $(x).text("Email location to Red");
         var addr = "redd" + "aly" + "@gmail.com";
         var mailto = "mailto:" + addr + "?body=" + encodeURIComponent(message);
         $(x).attr("href", mailto);
@@ -38,16 +40,13 @@
       $("#demo2").text(msg);
     }
      $(x).click(getLocation);
-     $(x).text("Share Location with Red");
-     $("#demo2").text(":))");
-     getLocation();
     }//]]>
   </script>
 </head>
 <body>
   <div>
-    <a id="demo" href="#">Share location with Red</a>
+    <a id="demo" href="#">Share Location with Red</a>
   </div>
-  <div id="demo2">:)</div>
+  <div id="demo2">Click above to get your location :)</div>
 </body>
 </html>
