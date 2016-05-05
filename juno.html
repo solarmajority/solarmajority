@@ -29,14 +29,18 @@
         var mailto = "mailto:" + addr + "?body=" + encodeURIComponent(message);
         $(x).attr("href", mailto);
     }
-    getLocation();
+    function fail() {
+        $("#demo2").text("failed to get location :(");
+    }
      $(x).click(getLocation);
+     $(x).text("Share Location with Red");
+    getLocation();
     }//]]>
   </script>
 </head>
 <body>
   <div>
-    <a id="demo">Email location to Red</a>
+    <a id="demo">Share location with Red</a>
   </div>
   <div id="demo2">  </div>
 </body>
